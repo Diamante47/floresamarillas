@@ -510,12 +510,12 @@
 
                 <!-- Texto Central de Vista 1 -->
                 <h1 class="v1-text">
-                    "Mi lógica me decía que no mezclara el trabajo con el corazón, pero tú eres la <span class="hi">excepción</span> a todas mis reglas."
+                    "Esto es para ti amor mio.<span class="hi">TE AMOOOOO</span> con todo mi ser."
                 </h1>
 
                 <!-- Botón Elegante de Descubrimiento -->
                 <button class="btn-discover" id="btnDiscover">
-                    <span>Toca aquí para descubrir por qué</span>
+                    <span>Toca aquí para descubrir lo que siento por ti</span>
                     <span class="icon">🌻</span>
                 </button>
             </div>
@@ -572,28 +572,61 @@
 const NS = 'http://www.w3.org/2000/svg';
 const isMobile = window.innerWidth < 768;
 
-/* ── 20 FRASES ROMÁNTICAS ── */
 const FRASES = [
-    "Que lleves ese botecito de Nutella en tu cartera es mi recordatorio favorito de que siempre me tienes presente.",
-  "Nuestra caminata a la esquina por la sábila es la mejor rutina que he programado en mi vida.",
-  "Me confesaste que antes no te gustaba la melosería. Ser tu única excepción es mi mayor orgullo.",
-  "Cuando llegué no quise mezclar el corazón en la cooperativa, pero alteraste todo mi sistema.",
-  "Cuando me dejaste tu celular hoy en la tarde, me regalaste el nivel más alto de paz y confianza que existe.",
-  "A veces mi cerebro de ingeniero hace cortocircuito con un mensaje, pero mi corazón nunca duda de lo que somos.",
+  "Que lleves ese botecito de Nutella en tu cartera es mi recordatorio favorito de que siempre me tienes presente.",
+  "Nuestra caminata a la esquina por la sábila es la mejor forma de empezar el trabajo.",
+  "Dijiste que antes no te gustaba la melosería. Ser tu única excepción es mi mayor orgullo.",
+  "Cuando llegué a la cooperativa no quise mezclar el corazón con el trabajo, pero alteraste todo mi sistema.",
+  "Amo cómo logras ser una mujer tan reservada para el resto del mundo, y tan dulce y vulnerable cuando estamos a solas.",
+  "Me encanta que no necesites hablar todo el tiempo para demostrar lo que sientes; tus acciones son gigantes.",
+  "No se cuántos te amo voy, pero te amooooooo",
   "Prefiero el riesgo de salir a escondidas a las 5 AM de tu casa, si el premio es amanecer durmiendo a tu lado.",
-  "Ningún ramo comprado en la calle se compara con las flores que te programé en nuestro propio servidor.",
-  "Te juro que protegeré tus Nutellas de cualquier compañero, igual que siempre protegeré lo nuestro.",
+  "Cuando me sonríes en silencio durante nuestras caminatas, me confirmas que elegí a la mujer perfecta",
+  "Admiro profundamente lo independiente que eres. Eres una mujer fuerte y eso me vuelve loco.",
+  "Eres una mijer realmente increible amor",
   "Para el resto de la oficina somos simples compañeros, pero en privado eres mi mundo entero.",
-  "No me importa quién intente llamar tu atención, hoy me demostraste con hechos que tu lugar seguro soy yo.",
-  "El mejor parche para arreglar cualquier 'bug' o malentendido, siempre será verte sonreír en el parque.",
-  "Eres mi confidente, mi cómplice y definitivamente la mejor parte de mis días en Sumak Kawsay.",
-  "Gracias por dejarme entrar a tu casa, a tu intimidad y por confiarme tus espacios más personales.",
+  "No me importa quién intente llamar tu atención, me has demostrado con hechos que tu lugar seguro soy yo.",
+  "La mejor forma de mejorar mi día siempre será verte sonreír en el parque.",
+  "Eres mi confidente, mi cómplice y definitivamente la mejor parte de mis días.",
+  "Gracias por dejarme entrar a tu vida, a tu intimidad y por confiarme tus espacios más personales.",
   "La verdad es que me moría por escuchar tu voz anoche, y me muero de ganas de escucharla todos los días.",
-  "No necesito que sea una fecha comercial para sorprenderte; mi código siempre trabajará para verte sonreír.",
+  "Eres la persona mas brillante que he conocido, es algo de lo que mas me encanta de ti",
+  "Simplemente eres fantastica, me encanta estar a tu lado amor mio",
+  "Eres todo en mi vida amor",
   "Esa barrera que el mundo ve en ti, se derrite cuando estamos a solas. Amo ser el único que conoce ese lado tuyo.",
-  "Eres la mujer más práctica, hermosa y estructurada que conozco. Exactamente lo que mi lógica necesitaba.",
-  "Que me dejes cuidarte, a tu manera y a la mía, es el mejor regalo de este 21 de septiembre.",
-  "Como me escribiste aquella vez: yo también amo cómo eres, amo todo de ti, y te amo."
+  "Eres la mujer más maravillosa y hermosa que conozco. Exactamente lo que mi corazón necesitaba.",
+  "Que me dejes cuidarte, a tu manera y a la mía, es el mejor regalo que pude tener.",
+  "Eres exactamente el tipo de mujer que no necesita llamar la atención de nadie para ser la más atractiva del lugar.",
+  "Eres mi lugar seguro mi amor",
+  "La forma en la que proteges nuestra relación demuestra lo mucho que valoras y cuidas lo que estamos construyendo.",
+  "Te idolatro mi amor",
+  "Es increíble lo mucho que te esfuerzas en tu día a día amor",
+  "Eres la persona con la que quiero compartir mis mayores alegrías y también tus más grandes retos.",
+  "Incluso cuando estás seria o un poquito fastidiada, sigues siendo la mujer más hermosa que he conocido.",
+  "Eres lo mejor que me ha pasado amor mio.",
+  "Amo cada detalle de ti. ",
+  "Amo tenerte en mi vida",
+  "Amo que seas tú",
+  "Amo como eres tú",
+  "Amo todo de ti",
+  "Eres lo unico que necesito",
+  "Simplemente... Te amo amor mío",
+  "Poder descansar a tu lado es la mejor sensación del mundo",
+  "Tu aroma es mi perfume favorito amor",
+  "No sabes cuanto adoro tus besos y caricias",
+  "Me encanta verte tan feliz y protegida a mi lado",
+  "Eres mi todo y por ti me esforzaria mil veces mas",
+  "Simplemente te amo como nunca imagine amar a alguien",
+  "Eres la mejor mujer del mundo y soy el hombre mas afortunado por tenerte",
+  "Amo todo lo que soy y amo todo lo que tengo, y gran parte de eso es gracias a ti amor",
+  "Eres mi mundo, y aunque suene exagerado.. mi todo",
+  "Eres lo mas hermoso que ha pasado en mi vida",
+  "Estaría diespuesto a perderlo todo con tal de poder tenerte siempre a mi lado",
+  "No hay un solo momento en el que no piense en ti amor",
+  "Aunque ya lo sabes, eres la mujer mas bella y hermosa en todo el mundo",
+  "Tengo tantas ganas de vivir muchas mas cosas a tu lado",
+  "No solo eres la mujer mas hermosa, sino que eres la mas dulce, tierna, y amorosa",
+  "Cuando te tengo conmigo no necesito nada mas para ser feliz"
 ];
 
 /* ── ESTRELLAS DE FONDO ── */
@@ -789,14 +822,21 @@ const btnCycle = document.getElementById('btnCycle');
 const btnBack = document.getElementById('btnBack');
 const quoteText = document.getElementById('quoteText');
 
-let lastPhraseIndex = -1;
+let availableIndices = [];
 
 function getRandomPhrase(){
-    let idx;
-    do {
-        idx = Math.floor(Math.random() * FRASES.length);
-    } while (idx === lastPhraseIndex && FRASES.length > 1);
-    lastPhraseIndex = idx;
+    if (availableIndices.length === 0) {
+        // Refill array with all indices
+        for (let i = 0; i < FRASES.length; i++) {
+            availableIndices.push(i);
+        }
+        // Shuffle array (Fisher-Yates)
+        for (let i = availableIndices.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [availableIndices[i], availableIndices[j]] = [availableIndices[j], availableIndices[i]];
+        }
+    }
+    const idx = availableIndices.pop();
     return FRASES[idx];
 }
 
