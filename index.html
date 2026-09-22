@@ -421,6 +421,45 @@
             *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
             .fp{display:none!important}
         }
+
+        /* ── Modal Final ── */
+        .final-modal-overlay {
+            position:fixed;inset:0;
+            background:rgba(5,9,20,.8);
+            backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+            z-index:99999;
+            display:flex;align-items:center;justify-content:center;
+            opacity:0;pointer-events:none;
+            transition:opacity .5s ease;
+        }
+        .final-modal-overlay.show {
+            opacity:1;pointer-events:auto;
+        }
+        .final-modal-content {
+            background:rgba(12,16,40,.85);
+            border:1px solid rgba(255,214,0,.4);
+            border-radius:24px;
+            padding:2.8rem 2rem;
+            text-align:center;
+            max-width:90%;width:380px;
+            box-shadow:0 15px 45px rgba(0,0,0,.6),0 0 60px rgba(255,214,0,.15),inset 0 1px 0 rgba(255,255,255,.1);
+            transform:scale(.9) translateY(20px);
+            transition:transform .5s cubic-bezier(.4,0,.2,1);
+        }
+        .final-modal-overlay.show .final-modal-content {
+            transform:scale(1) translateY(0);
+        }
+        .final-modal-content h2 {
+            font-size:3rem;margin:0 0 1.2rem;
+            animation:heartbeat 2s infinite ease-in-out;
+        }
+        .final-modal-content p {
+            font-family:'Playfair Display',serif;
+            font-size:1.6rem;font-weight:600;
+            color:#ffd700;
+            margin:0 0 2.5rem;
+            line-height:1.4;
+        }
     </style>
 </head>
 <body>
@@ -566,6 +605,15 @@
     <div id="toast" class="toast">
         <span class="icon">😅</span>
         <span>Mas lento amor, me vas a dejar sin frases jaja</span>
+    </div>
+
+    <!-- Modal Final de Frases -->
+    <div id="finalModal" class="final-modal-overlay">
+        <div class="final-modal-content">
+            <h2>🌻</h2>
+            <p>Espero te haya gustado amor</p>
+            <button id="btnCloseModal" class="btn-discover">Seguir leyendo</button>
+        </div>
     </div>
 
 <script>
@@ -881,7 +929,18 @@ function showToast() {
 }
 
 // Ciclo de frases al tocar "Leer otra"
+const finalModal = document.getElementById('finalModal');
+const btnCloseModal = document.getElementById('btnCloseModal');
+
+btnCloseModal.addEventListener('click', () => {
+    finalModal.classList.remove('show');
+});
+
 btnCycle.addEventListener('click', () => {
+    if (availableIndices.length === 0) {
+        finalModal.classList.add('show');
+    }
+
     btnCycle.style.pointerEvents = 'none';
     phrasesRead++;
     if(phrasesRead % 10 === 0) {
